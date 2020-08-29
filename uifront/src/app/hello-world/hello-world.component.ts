@@ -17,7 +17,7 @@ export class HelloWorldComponent implements OnInit {
 
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.helloWorldService.executeHelloWorldService().subscribe((res) =>{
       this.welcomeMessage = res.content;
     })

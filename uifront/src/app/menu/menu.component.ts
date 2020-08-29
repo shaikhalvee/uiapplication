@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  welcomemessage = 'Test';
+  welcomeMessage = 'Test';
 
   constructor() { }
 

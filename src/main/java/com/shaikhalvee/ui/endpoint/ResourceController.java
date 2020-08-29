@@ -21,4 +21,11 @@ public class ResourceController {
 	public Greetings greeting(@RequestParam(value = "name", defaultValue = "Shaikh") String name) {
 		return new Greetings(counter.incrementAndGet(), String.format(template, name));
 	}
+
+	@GetMapping("/greetings-cors")
+	public Greetings greetingWithJavaConfig(
+			@RequestParam(required=false, defaultValue="World") String name) {
+		System.out.println("==== in greeting ====");
+		return new Greetings(counter.incrementAndGet(), String.format(template, name));
+	}
 }
