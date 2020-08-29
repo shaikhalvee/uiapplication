@@ -1,13 +1,11 @@
 package com.shaikhalvee.ui.endpoint;
 
 import com.shaikhalvee.ui.model.Greetings;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.concurrent.atomic.AtomicLong;
 
+@CrossOrigin("http://localhost:4200")
 @RestController
 public class ResourceController {
 
@@ -20,7 +18,7 @@ public class ResourceController {
 	}
 
 	@RequestMapping("/greeting")
-	public Greetings greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
+	public Greetings greeting(@RequestParam(value = "name", defaultValue = "Shaikh") String name) {
 		return new Greetings(counter.incrementAndGet(), String.format(template, name));
 	}
 }

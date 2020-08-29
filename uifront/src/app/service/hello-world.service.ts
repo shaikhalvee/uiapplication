@@ -11,6 +11,6 @@ export class HelloWorldService {
 
   }
   executeHelloWorldService() {
-    return this.http.get<Message>('http://localhost:8090/hello-world/api/v1/greeting');
+    return this.http.get<Message>('http://localhost:8090/greeting');
   }
 }
